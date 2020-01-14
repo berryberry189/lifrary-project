@@ -14,7 +14,6 @@ public class GenderOpenApi {
 	private static ArrayList<ArrayList> list;
 	private static ArrayList<String> book;
     public ArrayList<ArrayList> OpenApi(String startDt , String endDt, String gender, String fromAge, String toAge) {
-    	System.out.println("Api 실행");
 	  PHARM_URL = "http://data4library.kr/api/loanItemSrch?authKey="
 		  		+ "86b2aa39b6cd044028fdadb621d0907b5982a7b8a9f5e77514e3bebd85cfccb5"
 		  		+ "&startDt="+startDt				
@@ -46,7 +45,6 @@ public class GenderOpenApi {
         
         String tag = null;
         int event_type = xpp.getEventType();
-        System.out.println("xpp : " +xpp.getEventType());
          list = new ArrayList<ArrayList>();
          
         
@@ -63,7 +61,6 @@ public class GenderOpenApi {
                 if(tag.equals("bookname")){
                 	if(i < 5) {
                 		book = new ArrayList<String>();
-                		System.out.println("bookname 담김 : " + bookname);
                     bookname = xpp.getText();
                     book.add(bookname);
                 	}
@@ -71,7 +68,6 @@ public class GenderOpenApi {
                 if(tag.equals("isbn13")){
                 	if(i < 5) {
                 		i += 1;
-                		System.out.println("isbn13 담김 : " + isbn13);
                 		isbn13 = xpp.getText();
                 		book.add(isbn13);
                 		list.add(book);
@@ -90,7 +86,6 @@ public class GenderOpenApi {
      */
     private void printList(ArrayList<ArrayList> list){
         for(ArrayList entity : list){
-            System.out.println(entity);
         }
         
         

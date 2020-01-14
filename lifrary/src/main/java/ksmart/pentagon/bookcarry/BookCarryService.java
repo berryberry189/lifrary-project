@@ -164,7 +164,6 @@ public class BookCarryService {
 	// 희망도서신청 리스트 출력
 	public List<BookRequest> getRequestList(String lCode) {
 		
-		System.out.println("서비스 출력 --------------------------");
 		List<BookRequest> br = bookCarryMapper.getRequestList(lCode);
 		String cancelReason =null;
 		String opinion =null;
@@ -181,7 +180,6 @@ public class BookCarryService {
 				br.get(i).setBrOpinion(opinion);
 			}			
 		}
-		System.out.println("opinion=>"+opinion);
 			
 		return br;		
 	}
@@ -223,10 +221,7 @@ public class BookCarryService {
 		Paging paging =  new Paging(boardCount, currentPageStr);
 		// DB 행의 총 개수를 구하는 getStockAllCount() 메서드를 호출하여 int Date Type의 boardCount 변수에 대입
        
-        System.out.println("boardCount===>"+boardCount);
-        
-        
-        
+      
         // 페이징vo에 있는거 가져오는거임,,,
         int currentPage = paging.getCurrentPage();
         int lastPage = paging.getLastPage();
@@ -268,7 +263,7 @@ public class BookCarryService {
 		}else {
 			result = bookCarryMapper.deleteOrder(boCode);
 		}
-		System.out.println("deleteOrder result=>"+result);
+
 		return result;
 	}
 	// purchase 삭제
@@ -280,7 +275,7 @@ public class BookCarryService {
 		}else {
 			result = bookCarryMapper.deletePurchase(bpCode);
 		}
-		System.out.println("deletePurchase result=>"+result);
+
 		return result;
 	}
 	// purchase 삭제
@@ -292,7 +287,6 @@ public class BookCarryService {
 		}else {
 			result = bookCarryMapper.deleteDonation(bdnCode);
 		}
-		System.out.println("deletePurchase result=>"+result);
 		return result;
 	}
 		
@@ -304,9 +298,6 @@ public class BookCarryService {
 	
 	//// 도서정보 가지고 오기 AJAX	
 	public BookInformation getBookInfo(String biIsbn) {
-		
-		System.out.println("++++++++++++++++++ 서비스 메서드 시작  +++++++++++++++++++++++");
-		
 		BookInformation bi = bookCarryMapper.getBookInfo(biIsbn);		
 		if ( bi != null ) {
 
@@ -323,10 +314,7 @@ public class BookCarryService {
 	 			Document doc = dBuilder.parse(url);
 	 			doc.getDocumentElement().normalize();
 	 			
-	 			System.out.println("최상위 테그 노드네임 =>"+doc.getDocumentElement().getNodeName());
-	 			
 	 			NodeList nList = doc.getElementsByTagName("book");
-	 			System.out.println("파싱할 리스트 수 =>"+ nList.getLength() );
 	 			
 	 			for(int temp=0; temp<nList.getLength(); temp++) {
 	 				Node nNode = nList.item(temp);

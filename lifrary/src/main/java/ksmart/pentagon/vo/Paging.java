@@ -27,7 +27,6 @@ public class Paging {
 		// 파라미터로 넘어온 currentPage 값을 int형으로 캐스팅
 		if(currentPageStr != null && !"".equals(currentPageStr.trim())) {
 			currentPage = Integer.parseInt(currentPageStr);
-			System.out.println( "페이징 자바 currentPage =====>"+currentPage);
 		}
 		//currentPage가 0이면 1로 변경
 		if(currentPage == 0) currentPage = 1;

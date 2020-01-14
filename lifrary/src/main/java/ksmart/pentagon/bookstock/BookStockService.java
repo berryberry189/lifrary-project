@@ -120,16 +120,10 @@ public class BookStockService {
 	public Map<String, Object> getDetailSearchStockList(Map<String,Object> params, String currentPageStr){
 		int boardCount = bookStockMapper.getStockAllCount(params);
 		
-		System.out.println("서비스단 currentPageStr ====>"+currentPageStr);
-		 
-		
 		// 페이징
 		Paging paging =  new Paging(boardCount, currentPageStr);
 		// DB 행의 총 개수를 구하는 getStockAllCount() 메서드를 호출하여 int Date Type의 boardCount 변수에 대입
        
-        System.out.println("boardCount===>"+boardCount);
-        
-        
         // 페이징vo에 있는거 가져오는거임,,,
         int currentPage = paging.getCurrentPage();
         int lastPage = paging.getLastPage();
@@ -188,7 +182,6 @@ public class BookStockService {
     	
     	BookLend bl = bookStockMapper.getReturnDate(bsCode);
     	
-    	System.out.println("bl=>"+bl);
     	
     	String result ="";
     	if(bl == null) {
@@ -349,9 +342,7 @@ public class BookStockService {
 	 * @throws SAXException *********************************************************/
 	
 	//// 도서정보 가지고 오기 AJAX	
-	public BookInformation getBookInfoStock(String biIsbn) {
-		
-		System.out.println("++++++++++++++++++ 서비스 메서드 시작  +++++++++++++++++++++++");
+	public BookInformation getBookInfoStock(String biIsbn) {		
 		
 		BookInformation bi = bookStockMapper.getBookInfoStock(biIsbn);		
 		if ( bi != null ) {
@@ -369,10 +360,8 @@ public class BookStockService {
 	 			Document doc = dBuilder.parse(url);
 	 			doc.getDocumentElement().normalize();
 	 			
-	 			System.out.println("최상위 테그 노드네임 =>"+doc.getDocumentElement().getNodeName());
-	 			
+
 	 			NodeList nList = doc.getElementsByTagName("book");
-	 			System.out.println("파싱할 리스트 수 =>"+ nList.getLength() );
 	 			
 	 			for(int temp=0; temp<nList.getLength(); temp++) {
 	 				Node nNode = nList.item(temp);

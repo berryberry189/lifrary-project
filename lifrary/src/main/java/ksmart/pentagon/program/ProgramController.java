@@ -101,7 +101,6 @@ public class ProgramController {
 	 */
 	@PostMapping("/lifrary/programApply")
 	public String programApply(ProgramApply pa) {
-		System.out.println(pa + " <== pa");
 		programService.applyProgram(pa);
 		return "redirect:/lifrary/programSearchList";
 	}
@@ -236,7 +235,6 @@ public class ProgramController {
 
 	@GetMapping("/admin/programDelete")
 	public String adminProgramDelete(@RequestParam(value = "pmCode") String pmCode) {
-		System.out.println(pmCode + "<== pmCode");
 		programService.deleteProgram(pmCode);
 		return "redirect:/admin/programSearchList";
 	}

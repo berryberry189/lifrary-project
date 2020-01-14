@@ -249,7 +249,6 @@ public class BookLendService {
 	    Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        System.out.println("current: " + df.format(cal.getTime()));
 
         String svDate = (String) params.get("svDate");
         if(("week").equals(svDate)) {
@@ -304,7 +303,6 @@ public class BookLendService {
 	    Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        System.out.println("current: " + df.format(cal.getTime()));
 
         String svDate = (String) params.get("svDate");
         if(("week").equals(svDate)) {

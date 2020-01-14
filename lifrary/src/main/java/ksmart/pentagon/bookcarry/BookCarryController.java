@@ -81,10 +81,7 @@ public class BookCarryController {
     	String saId = (String) session.getAttribute("SAID");
     	
     	bookCarry.setUid(saId);
-    	bookCarry.setlCode(lCode);
-    	
-    	System.out.println(bookCarry.toString());
-    	
+    	bookCarry.setlCode(lCode);    	
     	bookCarryService.insertDonation(bookCarry);
     	
 		return "redirect:/admin/bookDonationList";   	
@@ -312,7 +309,6 @@ public class BookCarryController {
     	bookRequest.setuId(sId);
     	bookRequest.setlCode(lCode);
     	
-    	System.out.println(bookRequest.toString());
     	
     	bookCarryService.insertRequest(bookRequest);
     	
@@ -333,7 +329,6 @@ public class BookCarryController {
 			, @RequestParam(value="biIsbn",required=false)String biIsbn) 
 	{
     	
-    	System.out.println("*****************************biIsbn=>"+biIsbn);
     	
 		return bookCarryService.getBookInfo(biIsbn);	
 	}
@@ -378,10 +373,7 @@ public class BookCarryController {
     	   , @RequestParam(value="said",required=false)String said
     	   , @RequestParam(value="write",required=false)String write
     	   , @RequestParam(value="bdnCode",required=false)String bdnCode) {
-    	
-    	System.out.println( "deleteDonation said    ===> "+ said);
-    	System.out.println( "deleteDonation write   ===> "+ write);
-    	System.out.println( "deleteDonation bdnCode ===> "+ bdnCode);
+
     	int result = bookCarryService.deleteDonation(said, write, bdnCode);	
     	String text ="";
     	if(result == 0) {
@@ -398,10 +390,7 @@ public class BookCarryController {
     	   , @RequestParam(value="brCode",required=false)String brCode
     	   , @RequestParam(value="brProgress",required=false)String brProgress
     	   , @RequestParam(value="brCancelReason",required=false)String brCancelReason) {
-    	
-    	System.out.println("brCode===========>"+brCode);
-    	System.out.println("brProgress=======>"+brProgress);
-    	System.out.println("brCancelReason===>"+brCancelReason);
+
     	
     	int result = 0;
     	result = bookCarryService.updateProgress(brCode, brProgress, brCancelReason);

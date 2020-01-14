@@ -59,8 +59,7 @@ public class BookLendController {
 								, HttpSession session
 								, RedirectAttributes redirectAttributes){
 		
-		System.out.println("svBook: " + svBook);
-		System.out.println("svUser: " + svBook);
+
 		String libNum = (String) session.getAttribute("LIBNUM");
 		
 		//도서정보만 검색
@@ -111,8 +110,7 @@ public class BookLendController {
 								, HttpSession session
 								, RedirectAttributes redirectAttributes){
 		
-		System.out.println("svUser: " + svUser);
-		System.out.println("svBook: " + svBook);
+
 		String libNum = (String) session.getAttribute("LIBNUM");
 			
 		//회원정보만 검색
@@ -165,7 +163,7 @@ public class BookLendController {
 		booklend.setuId(saId);
 		
 		int result = bookLendService.lendInsert(booklend);
-		System.out.println(result);
+
 		
 		redirectAttributes.addFlashAttribute("resultInsert", result);
 	
@@ -198,7 +196,7 @@ public class BookLendController {
 		point.setpCode("p001");
 				
 		int result = bookLendService.returnUpdate(blCode, bsCode, point);
-		System.out.println(result);
+
 		
 		redirectAttributes.addFlashAttribute("resultUpdate", result);
 		

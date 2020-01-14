@@ -52,7 +52,6 @@ public class FacilityService {
 		List<FacilityReservation> frList = facilityMapper.getReservationSeat(fCode); // 결과를 frList에 담는다.
 		List<String> frStringList = new ArrayList<String>();
 		for (int i = 0; i < frList.size(); i++) {
-			System.out.println(frList.get(i));
 			frStringList.add(frList.get(i).getFrSelectNum()); // frList에서 사용중인 자리만 뽑아서 frStringList에 add한다.
 		}
 		return frStringList;
@@ -73,7 +72,6 @@ public class FacilityService {
 
 	// 공공시설 당일에 예약했는지 확인 , 공공시설 예약 처리에서 메서드를 사용합니다.
 	public List<String> getReserVation(String uId, String libNum, String fKinds) {
-		System.out.println(uId + "     " + libNum + "     " + fKinds);
 		List<String> frResult = facilityMapper.getRevserVation(uId, libNum, fKinds);
 		return frResult;
 	}

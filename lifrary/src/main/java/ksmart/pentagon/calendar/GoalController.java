@@ -41,10 +41,9 @@ public class GoalController {
 		goal.setlCode(libNum);
 		goal.setuId(uId);
 		
-		System.out.println(goal.toString());
 		
 		int resutl = goalService.goalInsert(goal);
-		System.out.println(resutl);
+
 		
 		return "redirect:/lifrary/myCalender";	
 	}

@@ -59,15 +59,12 @@ public class LibraryController {
 	 */
 	@PostMapping("/lifrary/login")
 	public String login(@RequestParam(value = "uId")String uId, @RequestParam(value = "uPw")String uPw, HttpSession session, Model model) {
-		System.out.println(uId + " <== uId");
-		System.out.println(uPw + " <== uPw");
 		
 		String libNum = (String)session.getAttribute("LIBNUM");
 		
 		Map<String,Object> map = libraryService.loginCheck(uId, uPw,libNum);
 		User user = (User)map.get("user");
 		String result = (String)map.get("result");
-		System.out.println(result + " <== result controller");
 		
 		if(!result.equals("로그인 성공")) {
 			//경고창 출력을 위해 result보내주기
@@ -79,7 +76,7 @@ public class LibraryController {
 		session.setAttribute("SNAME", user.getuName());
 		session.setAttribute("SDIV", user.getuDivision());
 		
-		System.out.println(session.getAttribute("LIBNUM")+ " <== LIBNUM");
+
 		if(session.getAttribute("LIBNUM") == "000000") {
 			return "redirect:/pentagon/index";
 		}else if(session.getAttribute("LIBNUM") == "111111") {
@@ -122,7 +119,7 @@ public class LibraryController {
 	//회원가입 등록 
 	@GetMapping("/lifrary/userInsert")
 	public String userInsert() {
-		System.out.println("userInsert @GetMapping 회원가입폼 ");
+		
 		return "/librarypage/user/userInsert";
 	}
 	
@@ -131,11 +128,6 @@ public class LibraryController {
 	@PostMapping("/lifrary/userInsert")
 	public String userInsert(HttpSession session, User user, UserLevelHistory userLevelHistory
 								, UserAuthorityHistory userAuthorityHistory, StudyCate studyCate) {
-		System.out.println("userInsert @PostMapping 회원가입폼 ");
-		System.out.println("user 확인 ==>> " + user);
-		System.out.println("userLevelHistory 확인 ==>> " + userLevelHistory);
-		System.out.println("userAuthorityHistory 확인 ==>> " + userAuthorityHistory);
-		System.out.println("studyCate 확인 ==>> " + studyCate);
 		
 		
 		libraryService.userInsertUser(user);	
@@ -154,34 +146,29 @@ public class LibraryController {
 	//도서관페이지-마이페이지 내정보 상세보기
 	@GetMapping("/lifrary/myUserDetail")
 	public String myUserDetail(Model model, HttpSession session) {
-		System.out.println("myUserDetail @GetMapping 내정보 상세보기 ");
+		
 		
 		String getSID = (String) session.getAttribute("SID");//세션에서 회원ID
 		String getSAID = (String) session.getAttribute("SAID");
 		String libNum = (String) session.getAttribute("LIBNUM");	//세션에서 도서관코드
-		System.out.println("getSID 세션에서가져온 아이디  >>>" + getSID );
-		System.out.println("getSID 세션에서가져온 아이디  >>>" + getSAID ); 
-		System.out.println("libNum 세션에서가져온 도서관 코드  >>>" + libNum );
 		
 		model.addAttribute("myUserDetail", libraryService.myUserDetail(getSID ,libNum));
-		System.out.println("myUserDetail 값 넘어오는지 확인바람"+ libraryService.myUserDetail(getSID ,libNum));
+		
 		return "/librarypage/user/myUserDetail";
 	}
 	
 	//도서관페이지 - 마이페이지 내정보 수정하기 
 	@GetMapping("/lifrary/myUserUpdate")
 	public String getMyUserUpdate(Model model, HttpSession session) {
-	   System.out.println("getLibrarianMyUpdate 내정보 수정 하는 폼 ");
+
 	   
 	   String getSID = (String) session.getAttribute("SID");
 	   String getSAID = (String) session.getAttribute("SAID");
 	   String libNum = (String) session.getAttribute("LIBNUM");
-	    System.out.println("getSID 세션에서가져온 아이디  >>>" + getSID );
-	   System.out.println("getSAID 세션에서가져온 아이디  >>>" + getSAID );
-	   System.out.println("libNum 세션에서가져온 도서관 코드  >>>" + libNum );
+
 	   
 	   model.addAttribute("myUserUpdate", libraryService.getMyUserUpdate(getSID ,libNum));
-	   System.out.println("myUserUpdate 값 넘어오는지 확인바람  >>>> ");
+
 		
 	   return "/librarypage/user/myUserUpdate";
 		
@@ -190,7 +177,6 @@ public class LibraryController {
 	//사서 자신 정보 수정
 	@PostMapping("/lifrary/myUserUpdate")
 	public String myUserUpdate(User user) {
-		System.out.println("myUserUpdate  내정보 수정 후 상세보기로  ");
 		
 		libraryService.myUserUpdate(user);
 		return "redirect:/lifrary/myUserDetail";
@@ -199,7 +185,7 @@ public class LibraryController {
 	//회원 탈퇴 하는 페이지
 	@GetMapping("/lifrary/myUserDelete")
 	public String myUserDelete() {
-		System.out.println("myUserDelete  회원 탈퇴하기  ");
+		
 		return "/librarypage/user/myUserDelete";
 	}
 	
@@ -210,9 +196,9 @@ public class LibraryController {
     		, @RequestParam(value="SID",required=false)String SID
     		, @RequestParam(value="uPw",required=false)String uPw
     		,HttpSession session ) {
-		System.out.println("deleteUser 관리자가 회원 삭제하기 ajax");
+		
 		String libNum = (String)session.getAttribute("LIBNUM");	//도서관코드
-		System.out.println("도서관 코드  : " + session.getAttribute("LIBNUM"));
+
 		String result = libraryService.deleteUser(SID, uPw, libNum);
 		
 		//세션 종료
@@ -227,7 +213,7 @@ public class LibraryController {
 	//아이디,비번 찾기 
 	@GetMapping("/lifrary/userFindIdPw")
 	public String userFindIdPw() {
-		System.out.println("userFindIdPw  내정보 아이디 비번 찾기  ");
+		
 		
 		return "/librarypage/user/userFindIdPw";
 		

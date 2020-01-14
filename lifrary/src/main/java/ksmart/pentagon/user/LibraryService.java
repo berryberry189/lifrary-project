@@ -50,39 +50,35 @@ public class LibraryService {
 	
 	//회원가입
 	public int userInsertUser(User user) {
-		System.out.println("userInsertUser 서비스진입");
 		
 		return libraryMapper.userInsertUser(user);
 	}
 	public int userInsertUserLevelHistory(UserLevelHistory userLevelHistory) {
-		System.out.println("userInsertUserLevelHistory 서비스진입");
 		
 		return libraryMapper.userInsertUserLevelHistory(userLevelHistory);
 	}
 	public int userInsertUserAuthorityHistory(UserAuthorityHistory userAuthorityHistory) {
-		System.out.println("userInsertUserAuthorityHistory 서비스진입");
 		
 		return libraryMapper.userInsertUserAuthorityHistory(userAuthorityHistory);
 	}
 	public int userInsertStudyCate(StudyCate studyCate) {
-		System.out.println("userInsertStudyCate 서비스진입");
 		
 		return libraryMapper.userInsertStudyCate(studyCate);
 	}
 	
 	//회원 마이페이지 - 내정보 상세보기
 	public User myUserDetail(String getSID ,String libNum) {
-		System.out.println("myUserDetail 서비스진입");
+		
 		return libraryMapper.myUserDetail(getSID, libNum);
 	}
 	
 	//사서 - 사서 내 정보 수정하기.
 	public User getMyUserUpdate(String getSID ,String libNum) {
-		System.out.println("getMyUserUpdate 서비스진입");
+		
 		return libraryMapper.getMyUserUpdate(getSID, libNum);
 	}
 	public int myUserUpdate(User user) {
-		System.out.println("myUserUpdate 서비스진입");
+
 		return libraryMapper.myUserUpdate(user);
 	}
 	
@@ -90,11 +86,10 @@ public class LibraryService {
 	
 	//회원 탈퇴 AJAX
 	public String deleteUser(String SID, String uPw, String libNum) {
-		System.out.println("deleteUser 서비스진입");
 		
 		User u = libraryMapper.deleteUserCheck(SID, uPw, libNum);
 		String result = "";
-		System.out.println("user 확인 >>"+u);
+
 		if(u == null) { // 일치하지 않음
 			result = "불일치";
 		}else { // 일치함

@@ -70,7 +70,6 @@ public class BookStockController {
 		String lCode = (String) session.getAttribute("LIBNUM");
 		String uId = (String) session.getAttribute("SAID");
 		
-		System.out.println("stockDetailInsert2 lCode=>"+lCode);
 		bookStock.setlCode(lCode);
 		bookStock.setuId(uId);
 		bookStockService.insertStock(bookInformation, bookStock, bookCate);
@@ -117,10 +116,8 @@ public class BookStockController {
 	public String stockDetailUpdate(BookInformation bookInformation, BookStock bookStock , BookCate bookCate) {
 		
 	    String bookState = bookStock.getBsBookState();
-	    System.out.println("bookState1 =>"+bookState);
 	    if( bookState == "" ) {
 	    	bookState = bookStock.getBsBookStateText();
-	    	System.out.println("bookState2 =>"+bookState);
 	    	bookStock.setBsBookState(bookState);
 	    }
 		
@@ -164,8 +161,7 @@ public class BookStockController {
     	}else {
     		session.setAttribute("LIBNUM",params.get("lCode"));
     	}
-    	System.out.println("currentPageStr =======================> "+currentPageStr);
-    	    	
+
     	Map<String, Object> map = bookStockService.getDetailSearchStockList(params, currentPageStr);
     	
     	model.addAttribute("searchList", map.get("list"));
@@ -187,7 +183,7 @@ public class BookStockController {
     		, @RequestParam Map<String,Object> params
     		, @RequestParam(value = "currentPage", required = false, defaultValue = "1") String currentPageStr
     		, HttpSession session) {
-    	System.out.println("currentPageStr =======================> "+currentPageStr);
+
     	String lCode = (String)session.getAttribute("LIBNUM");   
     	params.put("lCode", lCode);
     	    	
@@ -220,7 +216,6 @@ public class BookStockController {
     		, HttpSession session) {
     	
     	
-    	System.out.println("currentPageStr =======================> "+currentPageStr);
     	String lCode = (String)session.getAttribute("LIBNUM");    	
     	params.put("lCode", lCode);
     	
@@ -310,9 +305,7 @@ public class BookStockController {
 			  Model model
 			, @RequestParam(value="biIsbn",required=false)String biIsbn) 
 	{
-    	
-    	System.out.println("*****************************biIsbn=>"+biIsbn);
-    	
+  	
 		return bookStockService.getBookInfoStock(biIsbn);	
 	}
     
@@ -341,8 +334,7 @@ public class BookStockController {
     	   , @RequestParam(value="write",required=false)String write
     	   , @RequestParam(value="bsCode",required=false)String bsCode) {
    	
-    	
-    	System.out.println("resetStock bsCode=>"+bsCode);
+
     	String text = "";
     	int result = bookStockService.updateStockReset(said, write, bsCode);
     	if(result == 1) {

@@ -14,8 +14,7 @@ public class AgeOpenApi {
 	private static ArrayList<ArrayList> list;
 	private static ArrayList<String> book;
     public ArrayList<ArrayList> OpenApi(String startDt , String endDt, String gender ,String  fromAge,String toAge, String area) {
-    	System.out.println("Api 실행");
-    	System.out.println("area : " + area);
+
     	if(!"0".equals(area)) {
     		System.out.println("area : x" );
     		PHARM_URL = "http://data4library.kr/api/loanItemSrch?authKey="
@@ -26,9 +25,9 @@ public class AgeOpenApi {
 			  		+ "&from_age="+fromAge						
 			  		+ "&to_age="+toAge
 			  		+ "&region="+area;
-    		System.out.println("PHARM_URL : " +PHARM_URL);
+
     	}else if("0".equals(area)) {
-    		System.out.println("area : 0" );
+
     		PHARM_URL = "http://data4library.kr/api/loanItemSrch?authKey="
 			  		+ "86b2aa39b6cd044028fdadb621d0907b5982a7b8a9f5e77514e3bebd85cfccb5"
 			  		+ "&startDt="+startDt				
@@ -36,7 +35,7 @@ public class AgeOpenApi {
 			  		+ "&gender="+gender
 			  		+ "&from_age="+fromAge						
 			  		+ "&to_age="+toAge;
-    		System.out.println("PHARM_URL : " +PHARM_URL);
+
     	}
         try {
             apiParserSearch();

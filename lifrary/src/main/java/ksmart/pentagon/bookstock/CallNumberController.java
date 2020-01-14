@@ -36,18 +36,15 @@ public class CallNumberController {
 		Map<String,String> map = new HashMap<String, String>();
 		String lCode = (String) session.getAttribute("LIBNUM");
 		
-		System.out.println("getCallName lCode=>"+lCode);
 		
 		String bsMark ="";     // 청구기호  ex) 810-글43ㅈ
 		String author = "";    // 저자기호  ex) 글43
 		String writer = "-";   // 저작기호  ex) -글43ㅈ
-		System.out.println("biAuthor=>"+biAuthor);
-		System.out.println("biName=>"+biName);
+
 		
 		author = callNumberService.makeBsmarkAuthor(biAuthor,lCode);
 		String name = callNumberService.makeBsmarkName(biName);
-		System.out.println("author=>"+author);
-		System.out.println("name=>"+name);
+
 		writer += author + name ;
 		
 		List<String> bs = callNumberService.checkWriterMark(writer,lCode);		

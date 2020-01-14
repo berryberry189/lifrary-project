@@ -24,17 +24,14 @@ public class LayoutService {
 		layoutStats.setBlLendDate(layoutMapper.bookLendCount(libnum));
 		layoutStats.setLibrarian(layoutMapper.librarianCount(libnum));
 		layoutStats.setMember(layoutMapper.memberCount(libnum));
-		System.out.println("service20 : " + layoutStats);
 		return layoutStats;
 	}
 	
 	public ArrayList<ArrayList> getAreaOpenApi(@RequestParam(value = "startDt")String startDt,
 			@RequestParam(value = "endDt")String endDt,
 			@RequestParam(value = "area")String area){
-		System.out.println("service 33 : " + startDt + endDt + area);
 		AreaOpenApi OpenApi = new AreaOpenApi();
 		ArrayList<ArrayList> list = OpenApi.OpenApi(startDt,endDt,area);
-		System.out.println("Service72 : " + list);
 		return list;
 	}
 	

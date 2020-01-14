@@ -70,15 +70,12 @@ public class CallNumberService {
 	
 	// 저자기호 구하기 (DB에 접근해서 2번째 글자의 숫자기호 구하기)
 	public String makeBsmarkNum(String text) {		
-		System.out.println("===============  서비스 메서드 실행    ===============");
 		String result = callNumberMapper.makeBsmarkNum(text);
-		System.out.println("메서드 실행..result=>"+result);
 		return result;
 	}
 	
 	// 도서 기호 구하기
 	public String makeBsmarkName(String biName) {
-		System.out.println("============ makeBsmarkName ============");	
 		List<Map<String, Character>> nameList = makeBsmarkService.getCharList(biName);
 		
 		String resultStr = "";
@@ -100,7 +97,6 @@ public class CallNumberService {
 	
 	// 도서 기호 구하기2
 	public String makeBsmarkName2(String biName) {
-		System.out.println("============ makeBsmarkName ============");	
 		List<Map<String, Character>> nameList = makeBsmarkService.getCharList(biName);
 		List<Map<String, Integer>> nIntList = makeBsmarkService.getIntList(biName);
 		

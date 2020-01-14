@@ -18,7 +18,7 @@
   			$(document).on('click','#commetBtn',function(){
   				var commentText = $('#comment').html();
   				var commentTrim = commentText.trim()
-  				console.log(commentTrim);
+
   				if(commentTrim == null || commentTrim == ""){
   				$('#comment').html('<br><br><br><hr style="border-color: #dcdcdc;">'
   								  +'<h3>문의 답변</h3><div><span style="color: #A2A4A6;" id="uId">관리자 : [[${session.SAID}]]</span></div>'
@@ -26,11 +26,11 @@
   								  +'<br><hr style="border-color: #dcdcdc;">'
   								  +'<div id="Btn"><button class="btn btn-primary d-block" id="commentInsert" style="margin-top: 20px;">답변등록</button></div>');
 	  			$(document).on('click','#commentInsert',function(){
-	  				console.log('dz');
+	
 	  				var boardCContent = $('#boardCContent').html();
-	  				console.log(boardCContent)
+
 	  				var boardCode = $('#boardCode').val();
-	  				console.log(boardCode)
+
 	  				var request = $.ajax({
 	  				  url: "/admin/inquiryCommentInsert",
 	  				  method: "POST",
@@ -39,23 +39,23 @@
 	  				});
 	  				 
 	  				request.done(function( data ) {
-	  					console.log(data);
+
 	  					var boardCCode = data.boardCCode;
-	  					console.log("1"+boardCCode)
+	
 	  					$('#commentContent').html("");
 	  					$('#commentContent').html(data.boardCContent);
 	  					$('#commentInsert').remove();
 				  		$('#Btn').html('<button class="btn btn-primary d-block" id="commentUpdate" style="margin-top: 20px;">수정하기</button>');
 				  				$(document).on('click','#commentUpdate',function(){
 				  				var commentContentHtml = $('#commentContent').html();
-				  				console.log(commentContentHtml);
+	
 				  				$('#commentContent').html("");
 				  				$('#commentContent').html('<div id="boardCContent" contenteditable style="height: 300px; width: 100%; border: 1px solid silver;">'+commentContentHtml+'</div>');
 				  				$('#commentInsert').remove();
 								$('#Btn').html('<button class="btn btn-primary d-block" id="commentUpdatePut" style="margin-top: 20px;">수정등록</button>');
 								
 								$(document).on('click','#commentUpdatePut',function(){
-									console.log('commentUpdatePut')
+			
 					  				var boardCContentHtml = $('#boardCContent').html();
 					  				var request = $.ajax({
 					  				  url: "/admin/inquiryCommentUpdate",
@@ -65,7 +65,7 @@
 					  				});
 					  				 request.done(function( commentUpdate ) {
 					  					boardCContentHtml = $('#boardCContent').html();
-					  					 console.log('update값 : '+commentUpdate.boardCContent);
+					  					 
 					  					$('#commentContent').html("");
 					  					$('#commentContent').html('<div id="boardCContent">'+commentUpdate.boardCContent+'</div>');
 					  					$('#Btn').html('<button class="btn btn-primary d-block" id="commentUpdate" style="margin-top: 20px;">수정하기</button>');
@@ -86,22 +86,20 @@
   			}
   			})
   			$(document).on('click','#commentUpdateDetail',function(){
-  				console.log('dzdz')
+
 				  				var commentContentHtml = $('#commentContent').html();
-				  				console.log(commentContentHtml);
+		
 				  				$('#commentContent').html("");
 				  				$('#commentContent').html('<div id="boardCContent" contenteditable style="height: 300px; width: 100%; border: 1px solid silver;">'+commentContentHtml+'</div>');
 				  				$('#commentUpdateDetail').remove();
 								$('#Btn').html('<button class="btn btn-primary d-block" id="commentUpdatePutDetail" style="margin-top: 20px;">수정등록</button>');
 								
 								$(document).on('click','#commentUpdatePutDetail',function(){
-									console.log('commentUpdatePutDetail')
+					
 									var boardCode = $('#boardCode').val();
 									var boardCCode = $('#boardCCode').val();
 					  				var boardCContentHtml = $('#boardCContent').html();
-					  				console.log(boardCContentHtml);
-					  				console.log(boardCCode);
-					  				console.log(boardCode);
+					  			
 					  				var request = $.ajax({
 					  				  url: "/admin/inquiryCommentUpdate",
 					  				  method: "POST",
@@ -110,8 +108,7 @@
 					  				});
 					  				 request.done(function( commentUpdate ) {
 					  					boardCContentHtml = $('#boardCContent').html();
-					  					 console.log('update값 : '+commentUpdate.boardCContent);
-					  					$('#commentContent').html("");
+					  					 					  					$('#commentContent').html("");
 					  					$('#commentContent').html('<div id="boardCContent">'+commentUpdate.boardCContent+'</div>');
 					  					$('#Btn').html('<button class="btn btn-primary d-block" id="commentUpdateDetail" style="margin-top: 20px;">수정하기</button>');
 					  					

@@ -29,15 +29,12 @@ public class StockBookCheckController {
 	//장서 점검회차 리스트 
 	@GetMapping("/admin/stockCheckList")
 	public String stockCheckList(Model model, HttpSession session) {
-		System.out.println("stockCheckList 장서점검 회차리스트 ");
 		String SAID = (String)session.getAttribute("SAID");
 		String libNum = (String)session.getAttribute("LIBNUM");
-		System.out.println("SAID 세션에서가져온 관리자 코드  >>>" + SAID );
-		System.out.println("libNum 세션에서가져온 도서관 코드  >>>" + libNum );
+
 		
 		model.addAttribute("stockCheckList", stockBookCheckService.stockCheckList(SAID, libNum));
-		System.out.println("장서점검리스트 stockCheckList 확인바람 =>> "+ stockBookCheckService.stockCheckList(SAID, libNum));
-		
+	
 		return "/adminpage/stockCheck/stockCheckList";
 	}
 	

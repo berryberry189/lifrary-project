@@ -69,7 +69,6 @@ public class BookCalenderController {
 		
 		calender.setlCode(libNum);
 		calender.setuId(uId);
-		System.out.println(calender.toString());
 		
 		redirectAttributes.addFlashAttribute("resultInsert", bookCalenderService.myCalenderInsert(calender));
 		
@@ -100,9 +99,6 @@ public class BookCalenderController {
 	 */
 	@RequestMapping(value="/lifrary/getMyCalender", produces = "application/json")
 	public @ResponseBody Calender getMyCalender(@RequestParam(value="cCode") String cCode) {
-		
-		System.out.println("cCode: "+cCode);
-		
 		return bookCalenderService.getMyCalender(cCode);
 	}
 	
