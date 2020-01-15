@@ -32,6 +32,7 @@ public class LayoutController {
 		
 		return "portfolio";
 	}
+
 	
 	
 	@GetMapping("/")

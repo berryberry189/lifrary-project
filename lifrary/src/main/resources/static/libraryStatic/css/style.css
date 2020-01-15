@@ -5067,6 +5067,8 @@ a.badge:focus {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+
 .jumbotron .container {
   max-width: 100%;
 }
@@ -19112,7 +19114,7 @@ a:focus {
   }
 }
 .layout-v3 #home-v1-header-carousel .carousel-caption p {
-  font-family: "Lato", Georgia, Times, serif;
+ 
   font-size: 30px;
   margin-bottom: 50px;
 }

@@ -26,6 +26,15 @@
     <link rel="stylesheet" th:href="@{portfolioStatic/css/flaticon.css}">
     <link rel="stylesheet" th:href="@{portfolioStatic/css/icomoon.css}">
     <link rel="stylesheet" th:href="@{portfolioStatic/css/style.css}">
+    
+    <style type="text/css">
+    
+    .text a:hover{
+    	color : #FFD9EC;
+    }
+    
+    </style>
+  
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -65,31 +74,17 @@
 		          		<span class="subheading">Hello</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Shin Daeun</span></h1>
 			            <h2 class="mb-4">A Developer</h2>
+			            <br>
+			            <br>
+			            <a href="http://berry719.cafe24.com"> <h3 style="color: #F29661;"> &gt 팀프로젝트 바로가기  &lt </h3></a>
+						<a th:href="@{file/Lifrary_portfolio.pdf}"> <h3 style="color: #F29661;"> &gt 완료보고서 확인  &lt </h3> </a> 
 			            
 		            </div>
 		          </div>
 	        	</div>
 	        </div>
 	      </div>
-
-	      <!-- <div class="slider-item">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third order-md-last img" style="background-image:url(images/bg_2.jpg);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
-	    						<span class="ion-ios-play play"></span>
-	    					</a>
-		          	<div class="text">
-			            <h1 class="mb-4 mt-3">I'm a <span>web designer</span> from Scotland</h1>
-			            <p><a href="#" class="btn-custom">Hire me</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
+	      
 	      </div> -->
 	    </div>
     </section>
@@ -102,8 +97,8 @@
 			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About Me</h2>
 			            <p style="color: black">2019. 07 ~ 2020.01 <br>
 							한국스마트정보교육원  ' 응용 소프트웨어 개발자 양성과정 ' 수료
-							<br>
-							<a href="http://berry719.cafe24.com" style="color: #F29661;"> 팀프로젝트 바로가기</a> </p>
+							<br></p>
+							
 						 <p>
 							(응용SW 및 DB엔지니어링 융합 / NCS직종 : 20010202 6개월과정)
 							▷교육활동<br>
@@ -155,13 +150,13 @@
 		
 		<section class="ftco-section bg-light" id="skills-section">
 			<div class="container">
-				<div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Skills</span>
-            <h2 class="mb-4">My Skills</h2>
-            <p>한국스마트정보교육원 -'응용 소프트웨어 개발자 양성 과정'을 수료했습니다.</p>
-          </div>
-        </div>
+			   <div class="row justify-content-center pb-5">
+		          <div class="col-md-12 heading-section text-center ftco-animate">
+		          	<span class="subheading">Skills</span>
+		            <h2 class="mb-4">My Skills</h2>
+		            <p>한국스마트정보교육원 -'응용 소프트웨어 개발자 양성 과정'을 수료했습니다.</p>
+		          </div>
+               </div>
 				<div class="row">
 					<div class="col-md-6 animate-box">
 						<div class="progress-wrap ftco-animate">
@@ -229,74 +224,9 @@
 							</div>
 						</div>
 					</div>
-		<!-- 		</div>
-		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">What I Do</span>
-            <h2 class="mb-4">Strategy, design and a bit of magic</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-
-        <div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5"><a href="#">Explore</a></h3>
-								<h4>Design Sprints</h4>
-								<h4>Product Strategy</h4>
-								<h4>UX Strategy</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5"><a href="#">Create</a></h3>
-								<h4>Information</h4>
-								<h4>UX/UI Design</h4>
-								<h4>Branding</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5"><a href="#">Learn</a></h3>
-								<h4>Prototyping</h4>
-								<h4>User Testing</h4>
-								<h4>UI Testing</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		 -->
-		
-		</section>
-
-		<!-- <section class="ftco-section ftco-hireme">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-lg-9 d-flex align-items-center ftco-animate">
-						<h2>I'm <span>Available</span> For Freelancing</h2>
-					</div>
-					<div class="col-md-4 col-lg-3 d-flex align-items-center ftco-animate">
-						<p class="mb-0"><a href="#" class="btn btn-white py-4 px-5">Hire me</a></p>
-					</div>
-				</div>
-			</div>
-		</section> -->
- 
+		        </div>
+             </div>
+          </section>
 
     <section class="ftco-section ftco-project" id="projects-section">
     	<div class="container">
@@ -305,7 +235,10 @@
           	<span class="subheading">Accomplishments</span>
             <h2 class="mb-4">Our Projects</h2>
             <p>전국민 독서량 증진과 도서관 방문율을 향상시키는 전국 도서관 통합 관리 시스템</p>
-            <p> <a href="http://berry719.cafe24.com"> 사이트로 바로가기</a></p>
+            <p>
+            	<a href="http://berry719.cafe24.com"> <h3 style="color: #F29661;"> &gt 팀프로젝트 바로가기  &lt </h3></a>
+				<a th:href="@{file/Lifrary_portfolio.pdf}"> <h3 style="color: #F29661;"> &gt 완료보고서 확인  &lt </h3></a> 
+            </p>
           </div>
         </div>
     		<div class="row">
@@ -342,95 +275,11 @@
 	    				</div>
     				</div>
     			</div>
-    			<!-- <div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-4.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-  				</div>
-  				<div class="col-md-8">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-5.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-  				</div> -->
     		</div>
     	</div>
     </section>
 
-<!-- 
-    <section class="ftco-section bg-light" id="blog-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Blog</span>
-            <h2 class="mb-4">Our Blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">March 23, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">March 23, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">March 23, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
- -->
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
@@ -441,35 +290,7 @@
             <p> Phone : 010-9616-4021</p>
           </div>
         </div>
-<!-- 
-        <div class="row no-gutters block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-          
-          </div>
-
-          <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/about.jpg);"></div>
-          </div>
-        </div>
-      </div>
- -->
+     </div>
 
     </section>
 		
