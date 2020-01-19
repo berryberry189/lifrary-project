@@ -8443,8 +8443,13 @@ h1, h2, h3, h4, h5,
           bordeR: 1px solid #ffcf77;
           padding: 5px 20px;
           text-transform: uppercase;
-          font-size: 12px;
-          letter-spacing: 3px; }
+          font-size: 20px;
+          letter-spacing: 3px;
+          }
+          .owl-carousel.home-slider .slider-item .slider-text .btn-custom:hover {
+           background: #ffcf77 !important;
+           color: #fff !important;
+          }
     .owl-carousel.home-slider .owl-nav {
       position: absolute;
       bottom: 60px !important;
@@ -8643,12 +8648,13 @@ h1, h2, h3, h4, h5,
         background: #a0f669;
         color: #fff; }
   .btn.btn-white {
-    background: #fff !important;
+    background: #FFDC7E !important;
     border: 1px solid #fff !important;
-    color: #000000 !important; }
+    color: #000000 !important; 
+   }
     .btn.btn-white:hover {
       border: 1px solid #000000;
-      background: #fff !important;
+      background: #F29661 !important;
       color: #fff; }
     .btn.btn-white.btn-outline-primary {
       border: 1px solid #ffcf77;
