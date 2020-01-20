@@ -409,6 +409,9 @@
 			<if test="lCode != null and lCode neq ''.toString()"> 
 			        AND bs.l_code=#{lCode}		
 			</if>
+			<if test="biKdc != null and biKdc neq ''.toString()"> 
+			        AND left(bi.bi_kdc,1) =#{biKdc}		
+			</if>
 			<if test="biName != null and biName neq ''.toString()"> 
 			        AND bi.bi_name Like CONCAT ('%',#{biName},'%')		
 			</if>
@@ -474,6 +477,9 @@
 	
 			<if test="lCode != null and lCode neq ''.toString()"> 
 			        AND bs.l_code=#{lCode}		
+			</if>
+			<if test="biKdc != null and biKdc neq ''.toString()"> 
+			        AND left(bi.bi_kdc,1) =#{biKdc}		
 			</if>
 			<if test="biName != null and biName neq ''.toString()"> 
 			        AND bi.bi_name Like CONCAT ('%',#{biName},'%')		

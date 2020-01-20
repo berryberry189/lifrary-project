@@ -82,19 +82,40 @@
 							                    <div class="filter-box">							                      						                       
 									               <form id="searchForm" th:action="@{/lifrary/bookDataSearchList}" method="get">
 									                  <div class="col-md-10">
-										               <div class="form-group text-center">
-														     <span>단행본
-														     <input name="bclCode" type="radio" value="bcl001" checked="">
-														     </span>
-														     &nbsp
-														     <span>연속간행물
-														     <input name="bclCode" type="radio" value="bcl002">
-														     </span>
-														     &nbsp
-														     <span>비도서
-														     <input name="bclCode" type="radio" value="bcl003">
-															 </span>
-														</div>
+										                  <div class="col-md-6">
+												               <div class="form-group text-center">
+																     <span>단행본
+																     <input name="bclCode" type="radio" value="bcl001" checked="">
+																     </span>
+																     &nbsp
+																     <span>연속간행물
+																     <input name="bclCode" type="radio" value="bcl002">
+																     </span>
+																     &nbsp
+																     <span>비도서
+																     <input name="bclCode" type="radio" value="bcl003">
+																	 </span>
+																</div>
+														    </div>
+														    <div class="col-md-4">
+																<div class="form-group">
+		                                                        <div class="select">
+		                                                        	<select name="biKdc" class="form-control select-hidden">
+			                                                            <option>분류기호를 선택해주세요</option>
+			                                                            <option value="0">총류-000</option>
+			                                                            <option value="1">철학-100</option>
+			                                                            <option value="2">종교-200</option>
+			                                                            <option value="3">사회과학-300</option>
+			                                                            <option value="4">자연과학-400</option>
+			                                                            <option value="5">기술과학-500</option>
+			                                                            <option value="6">예술-600</option>
+			                                                            <option value="7">언어-700</option>
+			                                                            <option value="8">문학-800</option>
+			                                                            <option value="9">역사-900</option>
+			                                                        </select>
+			                                                    </div>
+			                                                  </div>
+			                                                 </div>
 													<br>
 									                     <div class="row">									   
 									                        <div class="col-md-4 col-sm-6">

@@ -118,6 +118,8 @@ public class BookStockService {
 	
 	// (도서관) 검색된 소장도서 리스트 출력
 	public Map<String, Object> getDetailSearchStockList(Map<String,Object> params, String currentPageStr){
+		
+		
 		int boardCount = bookStockMapper.getStockAllCount(params);
 		
 		// 페이징
